@@ -1,1 +1,26 @@
 
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Excel Viewer & Editor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+    <h1>Просмотр и Редактирование Excel-файла</h1>
+    
+    <!-- Загрузка файла -->
+    <input type="file" id="fileInput" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"/>
+    <button onclick="loadFile()">Загрузить файл</button>
+
+    <!-- Таблица для отображения данных -->
+    <table id="excelTable"></table>
+
+    <!-- Кнопка сохранения изменений -->
+    <button onclick="saveChanges()">Сохранить изменения</button>
+</div>
+<script src="node_modules/xlsx/dist/xlsx.full.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
