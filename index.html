@@ -1,26 +1,23 @@
-
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Excel Viewer & Editor</title>
+    <title>CarFresh</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.full.min.js"></script>
 <body>
-<div id="app">
-    <h1>Просмотр и Редактирование Excel-файла</h1>
+    <h1>Инфа по авто</h1>
+    <!-- Форма с input типа file -->
+    <form enctype="multipart/form-data">
+        <label for="excelFileInput">Какой файл</label>
+        <input type="file" id="excelFileInput" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"/>
+        <button type="button" onclick="loadExcel()">Загрузить</button>
+    </form>
+    <table id="dataTable" border="1"></table>
+    <br />
+    <button onclick="saveExcel()">Сохранить</button>
     
-    <!-- Загрузка файла -->
-    <input type="file" id="fileInput" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"/>
-    <button onclick="loadFile()">Загрузить файл</button>
-
-    <!-- Таблица для отображения данных -->
-    <table id="excelTable"></table>
-
-    <!-- Кнопка сохранения изменений -->
-    <button onclick="saveChanges()">Сохранить изменения</button>
-</div>
-<script src="node_modules/xlsx/dist/xlsx.full.min.js"></script>
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
